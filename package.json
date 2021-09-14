@@ -1,0 +1,11 @@
+{
+  "name": "github actions",
+  "version": "1.0.0",
+  "description": "workflow test",
+  "main": "index.js",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0",
+    "date-fns": "^2.23.0"
+  }
+}
