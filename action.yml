@@ -2,4 +2,4 @@ name: Node Workflow for PR Close Time
 description: Node Workflow for PR Close Time Action
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: './dist/index.js'
