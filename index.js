@@ -2,11 +2,17 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const formatDistance = require('date-fns/formatDistance');
 const { Octokit } = require("@octokit/rest");
-const octokit = new Octokit();
+
+const { createActionAuth } = require("@octokit/auth-action");
 
 async function run() {
   try {
+    const auth = createActionAuth();
+    const authentication = await auth();
     const github_token = core.getInput('GITHUB_TOKEN');
+    const octokit = new Octokit({
+      authStrategy: createActionAuth
+    });
     const { context = {} } = github;
     const { pull_request } = context.payload;
     //console.log(context)
