@@ -3,4 +3,4 @@ Check out .github/workflows/timer.yml
 
 node scripting?
 
-test
+test node
