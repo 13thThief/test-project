@@ -1,0 +1,12 @@
+name: PR Close Time
+on:
+  pull_request:
+    types: [ closed ]
+jobs:
+  time_taken:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm install
+runs:
+  using: 'node12'
+  main: 'index.js'
