@@ -1,12 +1,13 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const format = require('date-fns/formatDistance');
+const formatDistance = require('date-fns/formatDistance');
 
 async function run() {
   try {
     const github_token = core.getInput('GITHUB_TOKEN');
     const { context = {} } = github;
     const { pull_request } = context.payload;
+    console.log(context)
 
     const createdAt = new Date(pull_request.created_at);
     const closedAt = new Date(pull_request.closed_at);

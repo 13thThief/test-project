@@ -7892,13 +7892,14 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(2186);
 const github = __nccwpck_require__(5438);
-const format = __nccwpck_require__(8149);
+const formatDistance = __nccwpck_require__(8149);
 
 async function run() {
   try {
     const github_token = core.getInput('GITHUB_TOKEN');
     const { context = {} } = github;
     const { pull_request } = context.payload;
+    console.log(context)
 
     const createdAt = new Date(pull_request.created_at);
     const closedAt = new Date(pull_request.closed_at);
