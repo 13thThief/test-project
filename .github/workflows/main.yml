@@ -1,0 +1,9 @@
+name: Node - PR Close Time
+on:
+  pull_request:
+    types: [ closed ]
+jobs:
+  time_taken:
+    runs-on: ubuntu-latest
+    steps:
+      uses: 13thThief/test-project
