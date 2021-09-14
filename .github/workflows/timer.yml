@@ -1,4 +1,4 @@
-name: PR Close Time
+name: Bash - PR Close Time
 on:
   pull_request:
     types: [ closed ]
