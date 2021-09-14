@@ -20,7 +20,7 @@ async function run() {
     const createdAt = new Date(pull_request.created_at);
     const closedAt = new Date(pull_request.closed_at);
     const timeDifference = closedAt - createdAt;
-    const time = formatDistance(0, timeDifference * 1000, { includeSeconds: true });
+    const time = formatDistance(0, timeDifference, { includeSeconds: true });
     const message = `This PR took ${time} to close`;
 
     await octokit.rest.issues.createComment({
