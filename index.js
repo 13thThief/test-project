@@ -1,13 +1,15 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const formatDistance = require('date-fns/formatDistance');
+const { Octokit } = require("@octokit/rest");
+const octokit = new Octokit();
 
 async function run() {
   try {
     const github_token = core.getInput('GITHUB_TOKEN');
     const { context = {} } = github;
     const { pull_request } = context.payload;
-    console.log(context)
+    //console.log(context)
 
     const createdAt = new Date(pull_request.created_at);
     const closedAt = new Date(pull_request.closed_at);
@@ -15,12 +17,19 @@ async function run() {
     const time = formatDistance(0, timeDifference * 1000, { includeSeconds: true });
     const message = `This PR took ${time} to close`;
 
-    const octokit = new github.GitHub(github_token);
-    const new_comment = octokit.issues.createComment({
-        ...context.repo,
-        issue_number: pull_request.number,
-        body: message
-      });
+    await octokit.rest.issues.createComment({
+      owner: '13thThief',
+      repo: 'test-project',
+      issue_number: pull_request.number,
+      body: message,
+    });
+
+
+    // const new_comment = octokit.issues.createComment({
+    //     ...context.repo,
+    //     issue_number: pull_request.number,
+    //     body: message
+    //   });
 
   } catch (error) {
     core.setFailed(error.message);
@@ -28,3 +37,4 @@ async function run() {
 }
 
 run();
+
