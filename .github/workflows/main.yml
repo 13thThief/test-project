@@ -8,8 +8,10 @@ jobs:
     name: Test the action on pr close
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - name: Google Checkout
+        uses: google-github-actions/setup-gcloud@master
       - name: Success
-        run: exit 0
+      - run: exit 0
       - name: Action
-        uses: ./
+        uses: ./index.js
