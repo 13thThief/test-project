@@ -11,3 +11,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Action
         uses: 13thThief/test-project@main
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+      - name: Run node
+        run: npm install
