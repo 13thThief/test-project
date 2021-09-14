@@ -7,4 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo This pr took (some time) to close. Created at ${{ github.event.pull_request.created_at }}, Closed at ${{ github.event.pull_request.closed_at }}
+        echo "This pr took (some time) to close. Created at ${{ github.event.pull_request.created_at }}, Closed at ${{ github.event.pull_request.closed_at }}"
+        
