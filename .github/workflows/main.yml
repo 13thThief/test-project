@@ -10,4 +10,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Action
-        uses: ./.github/actions/action.yml
+        uses: 13thThief/test-project@v1
