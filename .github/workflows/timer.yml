@@ -1,1 +1,10 @@
-
+name: PR Close Time
+on:
+  pull_request:
+    types: [ closed ]
+jobs:
+  time_taken:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo This pr took (some time) to close. Created at ${{ github.event.pull_request.created_at }}, Closed at ${{ github.event.pull_request.closed_at }}
