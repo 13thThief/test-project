@@ -3,7 +3,13 @@ on:
   pull_request:
     types: [ closed ]
 jobs:
-  time_taken:
+  node_timer:
     runs-on: ubuntu-latest
+    name: Test the action on pr close
     steps:
-      uses: 13thThief/test-project
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Success
+        run: exit 0
+      - name: Action
+        uses: ./
