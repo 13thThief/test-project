@@ -1,2 +1,2 @@
-# test-project
-Stay away, test is being carried out here
+# Github Actions
+Check out .github/workflows/timer.yml
