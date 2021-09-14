@@ -1,3 +1,3 @@
 # Github Actions
 
-8
+8.0
