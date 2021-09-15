@@ -9,10 +9,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v2
-      - name: Run node
-        run: npm install
       - name: Action
         uses: 13thThief/test-project@main
         with:
